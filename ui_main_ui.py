@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_uiArvxOD.ui'
+## Form generated from reading UI file 'main_uiRirIVT.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,12 +17,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(600, 450)
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
-        MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.resize(800, 640)
+        MainWindow.setMinimumSize(QSize(800, 500))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayout_2 = QHBoxLayout(self.centralwidget)
@@ -33,11 +29,6 @@ class Ui_MainWindow(object):
         self.tab_login.setObjectName(u"tab_login")
         self.formLayout = QFormLayout(self.tab_login)
         self.formLayout.setObjectName(u"formLayout")
-        self.btn_check_info = QPushButton(self.tab_login)
-        self.btn_check_info.setObjectName(u"btn_check_info")
-
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.btn_check_info)
-
         self.groupBox = QGroupBox(self.tab_login)
         self.groupBox.setObjectName(u"groupBox")
         self.horizontalLayout_6 = QHBoxLayout(self.groupBox)
@@ -90,30 +81,126 @@ class Ui_MainWindow(object):
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.groupBox)
 
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.formLayout.setItem(3, QFormLayout.FieldRole, self.verticalSpacer)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.btn_check_info = QPushButton(self.tab_login)
+        self.btn_check_info.setObjectName(u"btn_check_info")
+
+        self.horizontalLayout.addWidget(self.btn_check_info)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+
+
+        self.formLayout.setLayout(4, QFormLayout.FieldRole, self.horizontalLayout)
+
         self.label_info = QLabel(self.tab_login)
         self.label_info.setObjectName(u"label_info")
         self.label_info.setStyleSheet(u"color: rgb(255, 0, 0)")
+        self.label_info.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.label_info)
+        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.label_info)
 
         self.tabWidget.addTab(self.tab_login, "")
         self.tab_get_topo = QWidget()
         self.tab_get_topo.setObjectName(u"tab_get_topo")
         self.verticalLayout_6 = QVBoxLayout(self.tab_get_topo)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.treeView = QTreeView(self.tab_get_topo)
-        self.treeView.setObjectName(u"treeView")
+        self.edt_topo = QTextEdit(self.tab_get_topo)
+        self.edt_topo.setObjectName(u"edt_topo")
+        self.edt_topo.setEnabled(True)
+        self.edt_topo.setReadOnly(True)
 
-        self.verticalLayout_6.addWidget(self.treeView)
+        self.verticalLayout_6.addWidget(self.edt_topo)
 
-        self.pushButton_2 = QPushButton(self.tab_get_topo)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.verticalLayout_6.addWidget(self.pushButton_2)
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_4)
+
+        self.btn_get_topo = QPushButton(self.tab_get_topo)
+        self.btn_get_topo.setObjectName(u"btn_get_topo")
+
+        self.horizontalLayout_3.addWidget(self.btn_get_topo)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_3)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_3)
 
         self.tabWidget.addTab(self.tab_get_topo, "")
         self.tab_control = QWidget()
         self.tab_control.setObjectName(u"tab_control")
+        self.verticalLayout = QVBoxLayout(self.tab_control)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.message = QLabel(self.tab_control)
+        self.message.setObjectName(u"message")
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.message.sizePolicy().hasHeightForWidth())
+        self.message.setSizePolicy(sizePolicy)
+        self.message.setStyleSheet(u"color: rgb(255, 0, 0);\n"
+"font: 12pt \"Sans Serif\";")
+        self.message.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout.addWidget(self.message)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout.addItem(self.verticalSpacer_2)
+
+        self.cb_node = QComboBox(self.tab_control)
+        self.cb_node.setObjectName(u"cb_node")
+
+        self.verticalLayout.addWidget(self.cb_node)
+
+        self.btn_view_flow = QPushButton(self.tab_control)
+        self.btn_view_flow.setObjectName(u"btn_view_flow")
+
+        self.verticalLayout.addWidget(self.btn_view_flow)
+
+        self.btn_add_flow = QPushButton(self.tab_control)
+        self.btn_add_flow.setObjectName(u"btn_add_flow")
+
+        self.verticalLayout.addWidget(self.btn_add_flow)
+
+        self.btn_delete_all_flow = QPushButton(self.tab_control)
+        self.btn_delete_all_flow.setObjectName(u"btn_delete_all_flow")
+
+        self.verticalLayout.addWidget(self.btn_delete_all_flow)
+
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.cb_flow_id = QComboBox(self.tab_control)
+        self.cb_flow_id.setObjectName(u"cb_flow_id")
+
+        self.horizontalLayout_4.addWidget(self.cb_flow_id)
+
+        self.btn_del_flow_id = QPushButton(self.tab_control)
+        self.btn_del_flow_id.setObjectName(u"btn_del_flow_id")
+
+        self.horizontalLayout_4.addWidget(self.btn_del_flow_id)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout.addItem(self.verticalSpacer_3)
+
         self.tabWidget.addTab(self.tab_control, "")
 
         self.horizontalLayout_2.addWidget(self.tabWidget)
@@ -133,16 +220,21 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Control Net", None))
-        self.btn_check_info.setText(QCoreApplication.translate("MainWindow", u"Check Info", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Info", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Host address", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Port number", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Username", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Password", None))
-        self.label_info.setText(QCoreApplication.translate("MainWindow", u"fsfsadfa", None))
+        self.btn_check_info.setText(QCoreApplication.translate("MainWindow", u"Check Info", None))
+        self.label_info.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_login), QCoreApplication.translate("MainWindow", u"Login", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Update Topology", None))
+        self.btn_get_topo.setText(QCoreApplication.translate("MainWindow", u"Update Topology", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_get_topo), QCoreApplication.translate("MainWindow", u"Get Topo", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_control), QCoreApplication.translate("MainWindow", u"Control", None))
+        self.message.setText(QCoreApplication.translate("MainWindow", u"You must get topology first!", None))
+        self.btn_view_flow.setText(QCoreApplication.translate("MainWindow", u"View all flow", None))
+        self.btn_add_flow.setText(QCoreApplication.translate("MainWindow", u"Add flow", None))
+        self.btn_delete_all_flow.setText(QCoreApplication.translate("MainWindow", u"Delete all flow", None))
+        self.btn_del_flow_id.setText(QCoreApplication.translate("MainWindow", u"Delete specific", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_control), QCoreApplication.translate("MainWindow", u"Control Flow", None))
     # retranslateUi
 
