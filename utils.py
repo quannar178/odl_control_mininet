@@ -3,14 +3,16 @@ import requests
 import json
 import logging
 import logging.config
-from constants import odl_user, odl_password
+from constants import test_server_uri
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
-def get_url(url):
+def get_url(url , odl_ip, odl_port, odl_user,odl_password):
     '''request url'''
     headers = {'Content-type': 'application/json'}
     try:
+        url = url.format(odl_ip, odl_port)
+        logging.info("Url %s" %url)
         response =  requests.get(url, headers = headers, auth = (odl_user,odl_password), verify=False)
         logging.info("Url get Status: %s" % response.status_code)
 
@@ -55,7 +57,7 @@ def delUrl(url):
         logging.error('Url delete Error: %s' % e.message)
         return False
 
-def node_structure(my_topology, debug = 2):
+def node_structure(my_topology):
     """ learn (print out) the topology structure """
 
     node_list = []
@@ -82,3 +84,39 @@ def node_structure(my_topology, debug = 2):
     #     node_list.append(nodes)
     logging.info(node_list)
     return node_list
+
+def is_server_open(odl_ip, odl_port):
+    headers = {'Content-type': 'application/json'}
+    try:
+        url = test_server_uri.format(odl_ip, odl_port)
+        logging.info("url %s" %url)
+        response =  requests.get(url)
+        logging.info("Url get Status: %s" % response.status_code)
+
+        if response.status_code in [200]:
+            logging.info("SERVER IS OPENNING")
+            return True
+        else:
+            logging.info("SERVER IS CLOSING")
+            return False
+    except Exception as e:
+        logging.info("SERVER IS CLOSING")
+        return False
+
+def is_auth(url , odl_ip, odl_port, odl_user,odl_password):
+    '''request url'''
+    headers = {'Content-type': 'application/json'}
+    try:
+        url = url.format(odl_ip, odl_port)
+        logging.info("Url %s" %url)
+        response =  requests.get(url, headers = headers, auth = (odl_user,odl_password), verify=False)
+        logging.info("Url get Status: %s" % response.status_code)
+
+        if response.status_code in [200]:
+            return True
+        else:
+            logging.info(str(response.text))
+            return False
+    except Exception as e:
+        logging.error('Connection Error: %s' % e.message)
+        return False

@@ -6,12 +6,18 @@ odl_port = '8181'
 odl_name = 'flow:1'
 
 # URI
-get_topo_uri = 'http://%s:%s/restconf/operational/network-topology:network-topology/topology/%s' %(odl_ip, odl_port, odl_name)
+test_server_uri = "http://{}:{}/index.html"
+auth_uri = 'http://{}:{}/restconf/operational/network-topology:network-topology'
+
+get_topo_uri = 'http://{}:{}/restconf/operational/network-topology:network-topology/topology/%s' %(odl_name)
 get_pcep_uri = 'http://%s:%s/restconf/operational/network-topology:network-topology/topology/pcep-topology' %(odl_ip, odl_port)
 get_nodes_uri = 'http://%s:%s/restconf/config/opendaylight-inventory:nodes' %(odl_ip, odl_port)
 get_node_topo_uri = 'http://%s:%s/restconf/operational/network-topology:network-topology/topology/topology-netconf' %(odl_ip, odl_port)
 get_node_config_uri = 'http://%s:%s/restconf/config/network-topology:network-topology/topology/topology-netconf/node/{node}/yang-ext:mount/' %(odl_ip, odl_port)
+# flow id
 del_flow_table_node_template_uri = 'http://%s:%s/restconf/config/opendaylight-inventory:nodes/node/{}/flow-node-inventory:table/{}/flow/{}' %(odl_ip, odl_port)
+# table id
+del_flow_node_template_uri = 'http://%s:%s/restconf/config/opendaylight-inventory:nodes/node/{}/flow-node-inventory:table/{}' %(odl_ip, odl_port)
 add_flow_table_node_template_uri = 'http://%s:%s/restconf/config/opendaylight-inventory:nodes/node/{}/flow-node-inventory:table/{}/flow/{}' %(odl_ip, odl_port)
 
 add_flow_template_json = '''

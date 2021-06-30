@@ -1,6 +1,6 @@
 import logging
 from typing import List
-from constants import del_flow_table_node_template_uri, add_flow_template_json, add_flow_table_node_template_uri
+from constants import del_flow_table_node_template_uri, add_flow_template_json, add_flow_table_node_template_uri, del_flow_node_template_uri
 from utils import delUrl, putUrl
 import json
 
@@ -11,10 +11,17 @@ class NodeClass:
         self.table = 0
         self.flow = []
     
-    def delete_table(self, id_flow):
+    def delete_flow(self, id_flow):
         url = del_flow_table_node_template_uri.format(self.node_id,self.table,id_flow)
         logging.info("Delete flow URL: %s" % str(url))
         delUrl(url)
+
+    def delete_table(self):
+        url = del_flow_node_template_uri.format(self.node_id,self.table)
+        logging.info("Delete table URL: %s" % str(url))
+        delUrl(url)
+
+
     def add_flow(self, id_flow, inport, outport, priority):
         # need check inport and outport in terminate_id
         self.flow.append(id_flow)

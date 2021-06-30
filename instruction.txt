@@ -1,1 +1,6 @@
 sudo mn --mac --topo single,3 --controller remote,ip=192.168.56.4 --switch ovsk,protocols=OpenFlow13
+
+sudo mn --mac --topo single,3 --controller remote,ip=192.168.56.4 --switch ovsk,protocols=OpenFlow13
+
+
+sudo mn --mac --topo linear,2 --controller remote,ip=192.168.56.4 --switch ovsk,protocols=OpenFlow13
