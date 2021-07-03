@@ -2,5 +2,9 @@ sudo mn --mac --topo single,3 --controller remote,ip=192.168.56.4 --switch ovsk,
 
 sudo mn --mac --topo single,3 --controller remote,ip=192.168.56.4 --switch ovsk,protocols=OpenFlow13
 
-
 sudo mn --mac --topo linear,2 --controller remote,ip=192.168.56.4 --switch ovsk,protocols=OpenFlow13
+
+
+sudo mn --mac --custom topo3s4h.py --topo mytopo --controller remote,ip=192.168.56.4 --switch ovsk,protocols=OpenFlow13
+
+sudo mn --mac --custom circular.py --topo mytopo --controller remote,ip=192.168.56.4 --switch ovsk,protocols=OpenFlow13
